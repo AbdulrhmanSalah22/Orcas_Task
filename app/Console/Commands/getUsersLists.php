@@ -46,7 +46,7 @@ class getUsersLists extends Command
       if ($res1->successful()){
         $users1 =  $res1->object();
         foreach ($users1 as $user1){
-            DB::insert('insert into users (firsName ,lastName ,email ,avatar) values (?,?,?,?)',[
+            DB::insert('insert into users (firstName ,lastName ,email ,avatar) values (?,?,?,?)',[
                 $user1->firstName , $user1->lastName , $user1->email , $user1->avatar
             ]);
         }
@@ -54,14 +54,11 @@ class getUsersLists extends Command
       if ($res2->successful()){
           $users2 =  $res2->object();
           foreach ($users2 as $user2){
-              DB::insert('insert into users (firsName ,lastName ,email ,avatar) values (?,?,?,?)',[
+              DB::insert('insert into users (firstName ,lastName ,email ,avatar) values (?,?,?,?)',[
                   $user2->fName , $user2->lName , $user2->email , $user2->picture
               ]);
         }
       }
-
       return true ;
-
-
     }
 }
